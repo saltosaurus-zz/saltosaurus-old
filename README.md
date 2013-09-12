@@ -1,27 +1,9 @@
-WittyURL
+Saltosaurus
 ========
 
-A Django-based website for saltosaur.us.  Current apps:
+A Flask-based website using SQLAlchemy to connect to a MySQL database in production.  Version here simply uses a local SQLite3 DB.
 
-========
+Flask is a python microframework found at http://flask.pocoo.org/
 
-Project
-
-A list of all the projects I'm currently working on.  Each project has a start/end date, as well as the URL for the project (if it's hosted online somewhere).  
-
-
-Article
-
-A sequence of articles, each with the ability to comment.  The main index.html display the five most recent articles with no comments.  Additionality there is a page for each specific article which shows all of the comments on that particular article.
-
-
-FAQ
-
-An app to serve as a Frequently Asked Questions app.  It currently has pairs of questions/answers.
-
-
-========
-
-Future (potential) apps:
-
-========
+The original version of this site was based on Django but I decided this was too much overhead for such a simple site.
+The code can be found within the v1-django directory.
