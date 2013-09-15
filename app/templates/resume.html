@@ -19,7 +19,7 @@
 		
 		<nav>
 			<ul>
-				<li><a href="{{ url_for('index') }}" class="nav-button current">Home</a></li>
+				<li><a href="{{ url_for('index') }}" class="nav-button">Home</a></li>
 				<li><a href="{{ url_for('articles') }}" class="nav-button">Articles</a></li>
 				<li><a href="{{ url_for('projects') }}" class="nav-button">Projects</a></li>
 				<li><a href="{{ url_for('faq') }}" class="nav-button">FAQ</a></li>
@@ -29,28 +29,31 @@
 	</header>
 	
 	<div class="content">
-		<section class="index">
-			<header>
-				<h1>So says the Saltosaurus</h1>
-			</header>
-			
-			{% for article in latest_article_list %}
-				<article>
-					<h1><a href="{{ url_for('article', article_id=article.id) }}">{{ article.title }}</a><hr></h1>
-					<h2>Written <time datetime="{{article.pub_date}}">{{article.pub_date}}</time></h2>
-					<p>
-						{{ article.contents|truncate(600) }}
-						{% if article.contents|count > 600 %}
-							<a href="{{ url_for('article', article_id=article.id) }}">Read More</a>
-						{% endif %}
-					</p>
-				</article>
-			{% endfor %}
-		</section>
-		
-		<section class="twitter">
-			<a class="twitter-timeline"  href="https://twitter.com/saltosaurus"  data-widget-id="331566646533685249"  data-chrome="noheader nofooter transparent" data-tweet-limit="5" data-border-color="#C3A791">Tweets by @saltosaurus</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<section class="resume">
+			<ul class="FAQ" style="text-align: left;">
+				<li>
+					<header>
+						<h1>Who are you?</h1>
+					</header>
+					<p> The site you're looking at, built in Flask (Python microframework).  </p>
+				</li>
+				<li>
+					<header>
+						<h1>What are you doing with you life?</h1>
+					</header>
+					<p> The site you're looking at, built in Flask (Python microframework).  </p>
+				</li>
+				<li>
+					<header>
+						<h1>What are you working on?</h1>
+					</header>
+					<p> The site you're looking at, built in Flask (Python microframework).  </p>
+				</li>
+			</ul>
+			<section class="twitter">
+				<a class="twitter-timeline"  href="https://twitter.com/saltosaurus"  data-widget-id="331566646533685249"  data-chrome="noheader nofooter transparent" data-tweet-limit="5" data-border-color="#C3A791">Tweets by @saltosaurus</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</section>
 		</section>
 	</div>
 	

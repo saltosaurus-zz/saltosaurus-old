@@ -1,6 +1,70 @@
-{{latest_article_list}}
-{% for article in latest_article_list %}
-	{{ article.title }}
-	{{ article.contents }}
-{% endfor %}
-sdfsdfsdfsdfsdf
+<link href="{{ url_for('static', filename='genericons.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='script.js') }}" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Jura' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+<div id="page">
+	<header>
+		<section class="title">
+			<h1>The Saltosaurus Speaks</h1>
+			<h2>Where Brian Salter dumps the byproducts of his creativity...</h2>
+		</section>
+		
+		<ul class="social">
+			<li><a href="https://www.facebook.com/AuthorBrianSalter"><div class="genericon genericon-facebook"></div></a></li>
+			<li><a href="https://twitter.com/saltosaurus"><div class="genericon genericon-twitter"></div></a></li>
+			<li><a href="https://github.com/saltosaurus"><div class="genericon genericon-github"></div></a></li>
+			<li><a href="http://www.linkedin.com/in/briansalter"><div class="genericon genericon-linkedin-alt"></div></a></li>
+		</ul>
+		
+		<nav>
+			<ul>
+				<li><a href="{{ url_for('index') }}" class="nav-button">Home</a></li>
+				<li><a href="{{ url_for('articles') }}" class="nav-button current">Articles</a></li>
+				<li><a href="{{ url_for('projects') }}" class="nav-button">Projects</a></li>
+				<li><a href="{{ url_for('faq') }}" class="nav-button">FAQ</a></li>
+				<li><a href="{{ url_for('resume') }}" class="nav-button">Resume</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="content">
+		<section class="articles">
+			{% for article in latest_article_list %}
+				<article>
+					<h1><a href="{{ url_for('article', article_id=article.id) }}">{{ article.title }}</a><hr></h1>
+					<h2>Written <time datetime="{{article.pub_date}}">{{article.pub_date}}</time></h2>
+					<p>
+						{{ article.contents|truncate(600) }}
+						{% if article.contents|count > 600 %}
+							<a href="{{ url_for('article', article_id=article.id) }}">Read More</a>
+						{% endif %}
+					</p>
+					<h3><span id="numComm">{{ comments_list|selectattr("article_id", "sameas", article.id)|list|length }}</span> comments have been left thus far.  <a href="" class="add-comment">Add your own?</a></h3>
+					<section class="newComment">
+						<form method="post">
+							<input type="hidden" name="article_id" value="{{ article.id }}">
+							Author: <input type="text" name="author">
+							<input type="submit" value="Submit Comment" id="newComment">
+							<textarea rows="4" cols="50" name="comment"></textarea>
+						</form>
+					</section>
+				</article>
+			{% endfor %}
+			{% if num_articles > 5 %}
+				
+			{% endif %}
+		</section>
+		
+		<section class="twitter">
+			<a class="twitter-timeline"  href="https://twitter.com/saltosaurus"  data-widget-id="331566646533685249"  data-chrome="noheader nofooter transparent" data-tweet-limit="5" data-border-color="#C3A791">Tweets by @saltosaurus</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</section>
+	</div>
+	
+	<footer>
+		<h1 class="copyright">&copy; 2013 Brian Salter</h1>
+	</footer>
+</div>

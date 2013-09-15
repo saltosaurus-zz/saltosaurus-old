@@ -1,0 +1,226 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #f0e9e3;
+  text-align: center; }
+
+#page {
+  width: auto;
+  margin: 2em;
+  clear: both; }
+
+header {
+  display: inline-block;
+  min-width: 600px;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center; }
+
+.title {
+  font-family: 'Fredericka the Great', cursive;
+  background-color: #b19177;
+  color: white;
+  height: 65px;
+  width: 630px;
+  border-radius: 6px;
+  padding: 1em;
+  box-shadow: 1px 1px 1px #525150; }
+  @media screen and (min-width: 1200px) {
+    .title {
+      float: left;
+      display: inline-block; } }
+  @media screen and (max-width: 1200px) {
+    .title {
+      display: block;
+      margin: 0 auto; } }
+  .title h1 {
+    font-size: xx-large; }
+  .title h2 {
+    font-size: large; }
+
+.social {
+  list-style: none;
+  width: auto;
+  text-align: center;
+  vertical-align: text-bottom; }
+  .social li {
+    line-height: 30px;
+    padding: 14px 1em 0 1em;
+    display: inline-block; }
+  .social a {
+    text-decoration: none;
+    color: darkslategrey;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
+    .social a:hover {
+      color: lightslategrey;
+      opacity: .7; }
+
+nav {
+  font-family: 'Jura', sans-serif;
+  width: 425px;
+  line-height: 50px; }
+  @media screen and (min-width: 1200px) {
+    nav {
+      float: right; } }
+  @media screen and (max-width: 1200px) {
+    nav {
+      display: block;
+      float: none;
+      margin: 0 auto; } }
+  nav ul {
+    list-style: none; }
+    nav ul li {
+      display: inline; }
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
+    nav a:hover, nav a.current {
+      color: black;
+      opacity: .6;
+      background-color: #e6d7ca; }
+
+.nav-button {
+  background-color: #c3a791;
+  box-shadow: 1px 1px 1px #474644;
+  padding: .25em;
+  margin: 0 .5em;
+  border-radius: 8px; }
+
+.content {
+  display: inline-block;
+  min-width: 600px;
+  max-width: 1100px;
+  width: 100%;
+  height: auto;
+  min-height: 600px; }
+
+.index, .articles, .article {
+  display: inline-block;
+  height: auto;
+  margin: .5em; }
+  @media screen and (min-width: 1200px) {
+    .index, .articles, .article {
+      float: left;
+      width: 60%;
+      text-align: left;
+      margin-left: 16px; } }
+  .index header, .articles header, .article header {
+    font-family: 'Fredericka the Great', cursive;
+    background-color: #C3A791;
+    box-shadow: 0.5px 0.5px 1px grey;
+    color: white;
+    width: auto;
+    border-radius: 15px; }
+  .index article, .articles article, .article article {
+    font-family: 'Jura', sans-serif;
+    padding: 0 1.25em 2.5em 1.25em; }
+    .index article h1, .articles article h1, .article article h1 {
+      font-size: 32px;
+      margin: 0 -1em;
+      width: 625px; }
+    .index article h2, .articles article h2, .article article h2 {
+      font-size: x-small;
+      margin-top: .5em;
+      margin-bottom: 1em; }
+    .index article h3, .articles article h3, .article article h3 {
+      font-size: small;
+      margin-top: 1em; }
+    .index article p, .articles article p, .article article p {
+      font-size: 14px;
+      line-height: 18px;
+      margin: 0 -.5em;
+      width: 580px;
+      height: auto; }
+    .index article a, .articles article a, .article article a {
+      text-decoration: none;
+      color: DarkSlateGrey; }
+      .index article a:hover, .articles article a:hover, .article article a:hover {
+        color: LightSlateGrey; }
+  .index hr, .articles hr, .article hr {
+    border: 0;
+    height: 1px; }
+    @media screen and (min-width: 1200px) {
+      .index hr, .articles hr, .article hr {
+        background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+        background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); } }
+    @media screen and (max-width: 1200px) {
+      .index hr, .articles hr, .article hr {
+        background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+        background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)); } }
+
+.twitter {
+  width: 30%;
+  float: right;
+  margin-right: 50px; }
+  @media screen and (max-width: 1200px) {
+    .twitter {
+      display: none; } }
+
+.project, .FAQ {
+  font-family: 'Jura', sans-serif;
+  float: left;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  list-style: none; }
+  @media screen and (max-width: 1200px) {
+    .project, .FAQ {
+      float: none; } }
+  .project header, .FAQ header {
+    display: inline-block;
+    height: auto;
+    text-align: left;
+    margin: 0 1em;
+    width: 380px; }
+    .project header h1, .FAQ header h1 {
+      display: inline-block;
+      width: auto; }
+    .project header .status, .FAQ header .status {
+      display: inline-block;
+      background-color: #5b939d;
+      vertical-align: middle;
+      float: right;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: small;
+      padding: .25em;
+      margin: auto 1em; }
+  .project p, .FAQ p {
+    margin: 0 2em;
+    width: 600px; }
+  .project li, .FAQ li {
+    padding: 1em 0;
+    margin: 1em 0;
+    background-color: #E6D7CA;
+    border-radius: 25px;
+    box-shadow: 1px 1px 2px lightslategrey; }
+
+.newComment {
+  display: none; }
+
+footer {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  min-width: 200px;
+  height: 40px; }
+  footer .copyright {
+    vertical-align: middle;
+    line-height: 40px;
+    margin: auto;
+    font-size: small; }

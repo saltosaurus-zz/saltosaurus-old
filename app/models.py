@@ -6,7 +6,7 @@ class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     contents = db.Column(db.Text)
-    pub_date = db.Column(db.DateTime)
+    pub_date = db.Column(db.Date)
     comments = db.relationship('Comment', backref = 'article', lazy = 'dynamic')
     
     def __init__(self, title, contents):

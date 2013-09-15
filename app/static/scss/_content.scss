@@ -1,0 +1,132 @@
+@import "_misc.scss";
+
+.content {
+	display: inline-block;
+	min-width: 600px;
+	max-width: 1100px;
+	width: 100%;
+	height: auto;
+	min-height: 600px;
+}
+
+.index, .articles, .article {
+	display: inline-block;
+	height: auto;
+	margin: .5em;
+	@media screen and (min-width: $resolution-switch) {
+		float: left;
+		width: 60%;
+		text-align: left;
+		margin-left: 16px;
+	}
+	header {
+		font-family: 'Fredericka the Great', cursive;
+		background-color: #C3A791;
+		box-shadow: .5px .5px 1px $header-shadow;
+		color: white;
+		width: auto;
+		border-radius: 15px;
+	}
+	article {
+		font-family: 'Jura', sans-serif;
+		padding: 0 1.25em 2.5em 1.25em;
+		h1 {
+			font-size: 32px;
+			margin: 0 -1em;
+			width: 625px;
+		}
+		h2{
+			font-size: x-small;
+			margin-top: .5em;
+			margin-bottom: 1em;
+		}
+		h3 {
+			font-size: small;
+			
+			margin-top: 1em;
+		}
+		p {
+			font-size: 14px;
+			line-height: 18px;
+			margin: 0 -.5em;
+			width: 580px;
+			height: auto;
+		}
+		a {
+			text-decoration: none;
+			color: DarkSlateGrey;
+			&:hover {
+				color: LightSlateGrey;
+			}
+		}
+	}
+	hr { 
+		border: 0; 
+		height: 1px;
+		@media screen and (min-width: $resolution-switch) {
+			@include hr-gradient(.8, .4, 0);
+		}
+		@media screen and (max-width: $resolution-switch) {
+			@include hr-gradient(.1, .7, .1);
+		}
+	}
+}
+
+.twitter {
+	width: 30%;
+	float: right;
+	margin-right: 50px;
+	@media screen and (max-width: $resolution-switch) {
+		display: none;
+	}
+}
+
+.project, .FAQ {
+	font-family: 'Jura', sans-serif;
+	float: left;
+	display: inline-block;
+	height: auto;
+	width: auto;
+	list-style: none;
+	@media screen and (max-width: $resolution-switch) {
+		float: none;
+	}
+	header {
+		display: inline-block;
+		height: auto;
+		text-align: left;
+		margin: 0 1em;
+		width: 380px;
+		h1 {
+			display: inline-block;
+			width: auto;
+		}
+		.status {
+			display: inline-block;
+			background-color: $text-WIP;
+			vertical-align: middle;
+			float: right;
+			border-radius: 4px;
+			color: white;
+			font-weight: bold;
+			font-size: small;
+			padding: .25em;
+			margin: auto 1em;
+		}
+	}
+	p {
+		margin: 0 2em;
+		width: 600px;
+	}
+	li {
+		padding: 1em 0;
+		margin: 1em 0;
+		background-color: #E6D7CA;
+		border-radius: 25px;
+		box-shadow: 1px 1px 2px $project-shadow;
+	}
+}
+
+.newComment {
+	display: none;
+}
